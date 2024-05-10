@@ -1,0 +1,73 @@
+configuration {
+	display-drun: "";
+	display-clipboard: "";
+	drun-display-format: "{name}";
+	modi: "drun";
+}
+
+@import "~/.config/bspwm/rofi/colors.rasi"
+
+* {
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+window {
+	border: 400 600;
+	padding: 0 100;
+	fullscreen: true;
+}
+
+mainbox {
+	children: [inputbar,listview];
+}
+
+listview {
+	columns: 3;
+}
+
+inputbar {
+	children: [textbox];
+}
+
+textbox {
+	expand: false;
+	text-color: @bg;
+	font: "Roboto 50";
+	horizontal-align: 0.5;
+}
+
+element {
+	border: 3;
+	border-radius: 90;
+	border-color: @bg;
+	margin: 30;
+}
+
+element-text {
+	padding: 7 10;
+	text-color: inherit;
+	expand: true;
+	horizontal-align: 0.5;
+	vertical-align: 0.5;
+	font: "Symbols Nerd Font 50";
+}
+
+element.normal.normal,
+element.alternate.normal,
+element.normal.urgent,
+element.alternate.urgent,
+element.normal.active,
+element.alternate.active {
+	text-color: @bg;
+	border-color: @bg;
+}
+
+element.selected.normal,
+element.selected.urgent,
+element.selected.active {
+	text-color: @bg;
+	border-color: @bg;
+	background-color: #ffffff76;
+}
